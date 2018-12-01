@@ -1,0 +1,44 @@
+#map-area {
+    padding: 0px 0px 20px 0px;
+    /* padding-bottom: 200px; */
+    /* width: 80%; */
+    margin-bottom: 50px;
+    /* align: center; */
+    /* background-color: #DDDDDD; */
+    box-shadow: 0px 0px 100px -50px rgba(0,0,0,0.75);
+
+}
+
+.left-content {
+    display: inline-block;
+    width: 63%;
+    height: 700px;
+}
+
+.right-content {
+    display: inline-block;
+    width: 33%;
+    /* padding-left: 3%; */
+    margin-left: 3%;
+    height: 700px;
+}
+
+.icons{
+    background: #0000ff; /* color of the circle */
+    border-radius: 50%; /* make the div a circular shape */
+    opacity: 0.4;
+    box-shadow: 4px 4px 3px grey;
+    -moz-box-shadow: 4px 4px 3px grey;
+    -webkit-box-shadow: 4px 4px 3px grey;
+}
+
+#map-view-box {
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 25px 10px;
+}
+/* input{
+	padding: 10;
+	margin: 0;
+	left: 0;
+	clear: both;
+} */

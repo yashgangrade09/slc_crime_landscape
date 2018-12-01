@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization for Data Science - Homework 6</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/map-area.css"/>
+    <link rel="stylesheet" href="css/stats-area.css"/>
+    <link rel="stylesheet" href="css/slider.css"/>
+    <script src="https://d3js.org/d3.v5.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+    <script type='text/javascript' src='js/leaflet.js'></script>
+    <script type='text/javascript' src='js/leaflet.markercluster.js'></script>
+    <script type="application/javascript" src="js/leaflet.featuregroup.subgroup-src.js"></script>
+    <script type="application/javascript" src="js/selectionView.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="css/MarkerCluster.Default.css" />
+</head>
+<body>
+    <!--  Page header -->
+    <h1> The Crime Landscape of Salt Lake City </h1>
+
+    <!--  Container div -->
+    <div id="container" class="bordered">
+
+        <!-- Map area consits of the:
+            - map itself
+            - crime type selection
+            - year and month sliders
+            - summary box
+         -->
+
+        <div id="map-area" class="bordered">
+            <!--  All of the map stuff goes here-->
+            <div class="bordered left-content">
+                <div id="map-view-box" class="bordered">
+                </div>
+
+                <!--  Slider for selection a particular year and month-->
+                <div id="time-sliders-box" class="bordered">
+                </div>
+            </div>
+
+            <div class="bordered right-content" style="vertical-align:top;">
+                <!--  Check boxes for crime types-->
+                <div id="crime-selection-box" class="bordered" align="left">
+                    <h3>Select the crime(s) to visualize</h3>
+                    <div id='crime-selection' style="display: flex; padding-bottom: 20px;">
+                        <div class='.column'>
+                            <input class='checkboxes' type="checkbox" name="crimeType" value="Assault" checked="checked"> Assault<br>
+                            <input class='checkboxes' type="checkbox" name="crimeType" value="Burglary/ Larceny/ Robbery"> Burglary/ Larceny/ Robbery <br>
+                            <input class='checkboxes' type="checkbox" name="crimeType" value="Damaged Property"> Damaged property<br>
+                            <input class='checkboxes' type="checkbox" name="crimeType" value="Drugs" checked="checked"> Drug offense<br>
+                        </div>
+                        <div class='.column'>
+                            <input class="checkboxes" type="checkbox" name="crimeType" value="Homicide"> Homicide<br>
+                            <input class="checkboxes" type="checkbox" name="crimeType" value="Kidnap"> Kidnapping<br>
+                            <input class="checkboxes" type="checkbox" name="crimeType" value="Traffic"> Traffic violations<br>
+                            <input class="checkboxes" type="checkbox" name="crimeType" value="Weapons"> Weapons offense<br>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" id='crime-selection-btn' class="myButton">Update</a>
+                <div></div>
+                <!--  Shows summary information about the current selection-->
+                <div id="summary-box" class="bordered" style="padding-top:20px;">
+                    <canvas id="summary" width="400" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics area consits of the:
+            - yearly, monthly, weekly and daily trend charts for selected crimes
+            - legend for the trend charts
+         -->
+
+        <div id="statistics-box" class="statistics-view bordered">
+            <h2>Aggregated Statistics</h2>
+            <div style="margin-top:30px; margin-bottom: 30px;">
+                Aggregated statistics for the selected crimes.
+                The monthly, weekly and hourly statistics are computed for the currently selected year. <br>
+                <span style="font-size: 10px">A flat zero line in the graph means data for that aspect is not available.</span>
+            </div>
+            <!-- Container for the trend charts -->
+            <div id="stats-graphs" class="bordered">
+                <!-- Trend charts for each of the time scale-->
+                <div id="yearly-stats" class="bordered sub-stat">
+                    <canvas id="year-chart" width="500" height="300"></canvas>
+                </div>
+
+                <div id="monthly-stats" class="bordered sub-stat">
+                    <canvas id="month-chart" width="500" height="300"></canvas>
+                </div>
+
+                <div id="weekly-stats" class="bordered sub-stat">
+                    <canvas id="week-chart" width="500" height="300"></canvas>
+                </div>
+
+                <div id="hourly-stats" class="bordered sub-stat">
+                    <canvas id="hour-chart" width="500" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript" src="js/timeslider.js"></script>
+    <script type="application/javascript" src="js/mapView.js"></script>
+    <script type="application/javascript" src="js/statisticsView.js"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script type="application/javascript" src="js/script.js"></script>
+
+</body>
+</html>
