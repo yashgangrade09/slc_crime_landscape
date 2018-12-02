@@ -10,23 +10,9 @@ class mapView{
     	});
 
         let yearData = [];
-
-        // for (var i = 2008; i < 2017; i++) {
-        //     d3.csv('processeddata/' + i + '_processed_nowhitespace.csv').then(function(csvData) {
-        //         yearData[i].push(csvData);
-        //         console.log(yearData);
-        //     })
-        // }
-
         this.markerClusters = L.markerClusterGroup({maxClusterRadius: 40, chunkedLoading: true});
-
         this.control = L.control.layers(null, null, { collapsed: false, sortLayers: true});
-
         this.control.addTo(this.mymap);
-
-
-        // console.log(this.mymap);
-        // console.log('cnotrol', this.control);
 	}
 
 	showCrimeMarkers(markers) {
@@ -192,12 +178,10 @@ class mapView{
 
         this.markerClusters.clearLayers();
 
-        d3.csv("data/" + year + "_processed_nowhitespace.csv").then(function(yearData){
+        d3.csv("data/" + year + ".csv").then(function(yearData){
             try{
             	let plotData = JSON.parse(JSON.stringify(yearData));
                 let filteredData = plotData.filter(d => crime_list.indexOf(d["DESCRIPTION"]) != -1);
-
-                console.log(that.control);
 
                 function changeOverlay() {
                     that.mymap.removeControl(that.control);
@@ -210,7 +194,6 @@ class mapView{
                 that.showCrimeMarkers(filteredData);
                 for (var i = 0; i < crime_list.length; i++) {
                     let crime = crime_list[i];
-                    console.log(crime);
                     switch (crime) {
                         case "Assault":
                             that.control.addOverlay(that.groupAssault, 'Assault');
@@ -257,7 +240,6 @@ class mapView{
                 that.groupTraffic.addTo(that.mymap);
                 that.groupWeapons.addTo(that.mymap);
 
-    			// d3.select("#container").style('opacity', 1);
 				d3.select('#leaflet-control-layers-overlays').style('text-align', 'center');
             }
             catch(error){

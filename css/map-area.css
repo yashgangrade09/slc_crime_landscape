@@ -1,10 +1,6 @@
 #map-area {
     padding: 0px 0px 20px 0px;
-    /* padding-bottom: 200px; */
-    /* width: 80%; */
     margin-bottom: 50px;
-    /* align: center; */
-    /* background-color: #DDDDDD; */
     box-shadow: 0px 0px 100px -50px rgba(0,0,0,0.75);
 
 }
@@ -18,7 +14,6 @@
 .right-content {
     display: inline-block;
     width: 33%;
-    /* padding-left: 3%; */
     margin-left: 3%;
     height: 700px;
 }
@@ -36,9 +31,3 @@
     padding: 10px 10px 10px 10px;
     margin: 10px 10px 25px 10px;
 }
-/* input{
-	padding: 10;
-	margin: 0;
-	left: 0;
-	clear: both;
-} */

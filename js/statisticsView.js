@@ -45,7 +45,7 @@ class StatisticsView {
 		this.weekChart = new Chart (document.getElementById("week-chart") , {
 			type: 'line',
 			data: {
-				labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+				labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 				datasets: []
 			},
 			options: {
@@ -165,7 +165,7 @@ class StatisticsView {
 		this.weekChart = new Chart (document.getElementById("week-chart") , {
 			type: 'line',
 			data: {
-				labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+				labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 				datasets: week_dataset
 			},
 			options: {
